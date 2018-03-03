@@ -115,18 +115,49 @@ namespace Household
         public void ReadData()
         {
             Console.WriteLine("Dodawanie rachunku do bazy danych");
+
             Console.Write("Podaj rachunek za prąd: ");
-            ElectricityRoomBill = Double.Parse(Console.ReadLine());
+            try { ElectricityRoomBill = Double.Parse(Console.ReadLine()); }
+            catch (ArgumentException E ){
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                ElectricityRoomBill = Double.Parse(Console.ReadLine());
+            }
+
             Console.Write("Podaj rachunek za ogrzewanie: ");
-            HeatingBill = Double.Parse(Console.ReadLine());
+            try { HeatingBill = Double.Parse(Console.ReadLine());  }
+            catch (ArgumentException E ){
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                HeatingBill = Double.Parse(Console.ReadLine());
+            }
+
             Console.Write("Podaj rachunek za ciepłą wodę: ");
-            WarmWaterBill = Double.Parse(Console.ReadLine());
+            try { WarmWaterBill = Double.Parse(Console.ReadLine());}
+            catch (ArgumentException E ) {
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                WarmWaterBill = Double.Parse(Console.ReadLine());
+            }
+
             Console.Write("Podaj rachunek za zimną wodę: ");
-            ColdWaterBill = Double.Parse(Console.ReadLine());
+            try { ColdWaterBill = Double.Parse(Console.ReadLine()); }
+            catch (ArgumentException E ) {
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                ColdWaterBill = Double.Parse(Console.ReadLine());
+            }
+
             Console.Write("Podaj rachunek za śmieci: ");
-            WasteBill = Double.Parse(Console.ReadLine());
+            try { WasteBill = Double.Parse(Console.ReadLine()); }
+            catch (ArgumentException E ){
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                WasteBill = Double.Parse(Console.ReadLine());
+            }
+
             Console.Write("Podaj rachunek za prąd części wspólnej: ");
-            ElectricitySharedBill = Double.Parse(Console.ReadLine());
+            try  { ElectricitySharedBill = Double.Parse(Console.ReadLine()); }
+            catch (ArgumentException E) {
+                Console.WriteLine(E.Message + " podaj nowy rachunek ");
+                ElectricitySharedBill = Double.Parse(Console.ReadLine());
+            }
+
         }
         public void WriteBills(TextWriter destination)
         {
@@ -134,7 +165,10 @@ namespace Household
             destination.WriteLine("Rachunek za ogrzewanie: " + HeatingBill);
             destination.WriteLine("Rachunek za ciepłą wodę: " + WarmWaterBill);
             destination.WriteLine("Rachunek za zimną wodę: " + ColdWaterBill);
-            destination.WriteLine("Podaj rachunek za śmieci: " + WasteBill);
+            destination.WriteLine("Rachunek za śmieci: " + WasteBill);
+            destination.WriteLine("Rachunek za prąd części wspólnej: " + ElectricitySharedBill);
+
+
         }
 
 

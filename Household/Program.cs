@@ -16,6 +16,7 @@ namespace Household
             computeInput(Bill);
 
         }
+
         public static void runProgram()
         {
             Console.WriteLine("Witaj  w programie obsługi wydatków, wybierz co chcesz zrobić?" );
@@ -49,26 +50,25 @@ namespace Household
 
         private static void readingDataAndValidation(Expenses Bill)
         {
+            string validation = "n";
+            do
+            {
+                collectingData(Bill);
+                validation = Console.ReadLine();
+            }
+            while (validation != "y" && validation != "Y");
+        }
+
+        private static void collectingData(Expenses Bill)
+        {
             Bill.ReadData();
             Console.WriteLine("Dziękuję za wprowadzenie danych, twoje dane to: \n");
             Console.WriteLine("--------------------------------------------------");
             Bill.WriteBills(Console.Out);
             Console.WriteLine("--------------------------------------------------");
             Console.Write("Potwierdz, czy rachunki się zgadzają [y/n]:");
-            string validation = Console.ReadLine();
-          
-            while (validation != "y" && validation != "Y")
-            {
-                Bill.ReadData();
-                Console.WriteLine("Dziękuję za wprowadzenie danych, twoje dane to: \n");
-                Console.WriteLine("--------------------------------------------------");
-                Bill.WriteBills(Console.Out);
-
-                Console.WriteLine("--------------------------------------------------");
-                Console.Write("Potwierdz, czy rachunki się zgadzają [y/n]:");
-                validation = Console.ReadLine();
-            }
         }
+
         private static void saveDataToFile(Expenses Bill)
         {
             using (StreamWriter outputFile = File.AppendText("data.txt"))
@@ -77,7 +77,6 @@ namespace Household
             }
 
         }
-
         private static int _choice;
         private static int UserChoice
         {
