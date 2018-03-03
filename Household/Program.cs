@@ -11,11 +11,12 @@ namespace Household
         static void Main(string[] args)
         {
             runProgram();
+            computeInput();
 
         }
         public static void runProgram()
         {
-            Console.WriteLine("Witaj w programie obsługi wydatków, wybierz co chcesz zrobić?" );
+            Console.WriteLine("Witaj ąęćóśł w programie obsługi wydatków, wybierz co chcesz zrobić?" );
             Console.WriteLine("1.Dodaj rachunek\n2.Wyswietl statystyke\n3.Zakoncz");
 
             try {
@@ -48,6 +49,23 @@ namespace Household
                     throw new ArgumentException("Podaj wartosc 1, 2, lub 3");
                 }
             }
+        }
+       
+        private static void computeInput()
+        {
+            if (_choice == 1)
+            {
+                Expenses bill = new Expenses();
+                Console.WriteLine("Dodawanie rachunku do bazy danych" );
+                Console.Write("Podaj rachunek za Prad: ");
+                bill.ElectricityRoomBill = Double.Parse(Console.ReadLine());
+            }
+            else
+            {
+
+            }
+           
+
         }
 
     }
