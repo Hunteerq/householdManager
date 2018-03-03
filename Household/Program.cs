@@ -32,7 +32,7 @@ namespace Household
         }
         private static void computeInput(Expenses Bill)
         {
-            if (_choice == 1)
+            if ( UserChoice == 1)
             {
                 readingDataAndValidation(Bill);
                 saveDataToFile(Bill);
@@ -40,7 +40,7 @@ namespace Household
             }
             else
             {
-
+                /* TODO */
             }
            
 
