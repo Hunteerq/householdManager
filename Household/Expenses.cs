@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Household
 {
-    public class Expenses
+    internal class Expenses
     {
         private double _ElectricityRoomBill;
         public double ElectricityRoomBill
@@ -45,12 +46,12 @@ namespace Household
         private double _WarmWaterBill;
         public double WarmWaterBill
         {
-            get { return WarmWaterBill; }
+            get { return _WarmWaterBill; }
             set
             {
                 if (value > 0)
                 {
-                    WarmWaterBill = value;
+                    _WarmWaterBill = value;
                 }
                 else
                 {
@@ -109,6 +110,33 @@ namespace Household
                 }
             }
         }
+
+
+        public void ReadData()
+        {
+            Console.WriteLine("Dodawanie rachunku do bazy danych");
+            Console.Write("Podaj rachunek za prąd: ");
+            ElectricityRoomBill = Double.Parse(Console.ReadLine());
+            Console.Write("Podaj rachunek za ogrzewanie: ");
+            HeatingBill = Double.Parse(Console.ReadLine());
+            Console.Write("Podaj rachunek za ciepłą wodę: ");
+            WarmWaterBill = Double.Parse(Console.ReadLine());
+            Console.Write("Podaj rachunek za zimną wodę: ");
+            ColdWaterBill = Double.Parse(Console.ReadLine());
+            Console.Write("Podaj rachunek za śmieci: ");
+            WasteBill = Double.Parse(Console.ReadLine());
+            Console.Write("Podaj rachunek za prąd części wspólnej: ");
+            ElectricitySharedBill = Double.Parse(Console.ReadLine());
+        }
+        public void WriteBills(TextWriter destination)
+        {
+            destination.WriteLine("Rachunek za prąd: " + ElectricityRoomBill);
+            destination.WriteLine("Rachunek za ogrzewanie: " + HeatingBill);
+            destination.WriteLine("Rachunek za ciepłą wodę: " + WarmWaterBill);
+            destination.WriteLine("Rachunek za zimną wodę: " + ColdWaterBill);
+            destination.WriteLine("Podaj rachunek za śmieci: " + WasteBill);
+        }
+
 
     }
 }
