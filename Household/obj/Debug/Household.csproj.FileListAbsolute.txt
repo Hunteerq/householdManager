@@ -1,0 +1,14 @@
+C:\Users\Hunteerq\source\repos\Household\Household\bin\Debug\Household.exe.config
+C:\Users\Hunteerq\source\repos\Household\Household\bin\Debug\Household.exe
+C:\Users\Hunteerq\source\repos\Household\Household\bin\Debug\Household.pdb
+C:\Users\Hunteerq\source\repos\Household\Household\obj\Debug\Household.csprojResolveAssemblyReference.cache
+C:\Users\Hunteerq\source\repos\Household\Household\obj\Debug\Household.csproj.CoreCompileInputs.cache
+C:\Users\Hunteerq\source\repos\Household\Household\obj\Debug\Household.exe
+C:\Users\Hunteerq\source\repos\Household\Household\obj\Debug\Household.pdb
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\bin\Debug\Household.exe.config
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\bin\Debug\Household.exe
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\bin\Debug\Household.pdb
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\obj\Debug\Household.csprojResolveAssemblyReference.cache
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\obj\Debug\Household.csproj.CoreCompileInputs.cache
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\obj\Debug\Household.exe
+C:\Users\Hunteerq\Documents\Projects\C#\Household\Household\obj\Debug\Household.pdb
